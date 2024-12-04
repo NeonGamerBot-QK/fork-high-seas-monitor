@@ -87,7 +87,11 @@ if (diffs.length === 0) {
   await browser.close();
   process.exit(0);
 }
+try {
 
+} catch (e) {
+  console.error(e);
+}
 const blocks = getSlackBlocks(diffs);
 const response = await fetch(env.SLACK_WEBHOOK_URL, {
   method: "POST",

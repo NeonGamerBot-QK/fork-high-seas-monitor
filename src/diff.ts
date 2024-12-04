@@ -1,6 +1,7 @@
 import type { ShopItem } from ".";
 import { stripIndents } from "common-tags";
 import { deepEquals } from "bun";
+import type { SlackBlock } from "./slack";
 
 export function diffItem(oldItem: ShopItem, newItem: ShopItem) {
   if (deepEquals(oldItem, newItem)) return;
@@ -64,7 +65,13 @@ export function diffItem(oldItem: ShopItem, newItem: ShopItem) {
 
   return result.join("\n");
 }
+export function blocksToMd(blocks: SlackBlock[]): string {
+let  markdown = "";
+for (const block of blocks) {
 
+}
+return markdown;
+}
 export function diffItems(
   oldItems: ShopItem[],
   newItems: ShopItem[]
